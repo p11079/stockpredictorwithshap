@@ -51,3 +51,5 @@ streamlit run app.py
 
 - This project is educational and should not be treated as financial advice.
 - Predictions are directional and probabilistic, not guaranteed outcomes.
+- The data loader is hardened for Yahoo Finance multi-index responses.
+- The training and SHAP explanation flow was stress-tested across repeated runs to reduce crash risk.
