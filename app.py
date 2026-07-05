@@ -42,7 +42,16 @@ def fetch_stock_data(ticker: str, period: str = "3y") -> pd.DataFrame:
     if df.empty:
         raise ValueError(f"No price data found for {ticker}")
     df = df.reset_index()
-    df.columns = [c.replace(" ", "_") for c in df.columns]
+    flat_cols = []
+    for col in df.columns:
+        if isinstance(col, tuple):
+            if col[0] == "Date":
+                flat_cols.append("Date")
+            else:
+                flat_cols.append(str(col[0]))
+        else:
+            flat_cols.append(str(col))
+    df.columns = [c.replace(" ", "_") for c in flat_cols]
     return df
 
 
