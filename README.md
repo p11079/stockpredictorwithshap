@@ -1,4 +1,4 @@
-# Antigravity Stock Predictor with SHAP
+# Stock Predictor with SHAP
 
 Streamlit app for next-day stock direction prediction with explainable AI.
 
